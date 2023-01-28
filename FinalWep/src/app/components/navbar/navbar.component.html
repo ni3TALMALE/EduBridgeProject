@@ -1,0 +1,33 @@
+<div class="container-fluid position-relative nav-bar p-0">
+    <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+            <a href="" class="navbar-brand">
+                <h1 class="m-0 text-primary"><span class="text-dark">EXPLO</span>RE WORLD</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0">
+                    <a class="nav-item nav-link" routerLink="" routerLinkActive="active">Home</a>
+                    <a  class="nav-item nav-link" routerLink="/about" routerLinkActive="active">About</a>
+                    <a  class="nav-item nav-link" routerLink="/login" routerLinkActive="active"><i class="fas fa-user-circle" style="font-size:30px"></i></a>
+                    <div class="nav-item dropdown active">
+                        <a  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="navbarDropdown">Pages</a>
+                        <div class="dropdown-menu border-0 rounded-0 m-0" aria-labelledby="navbarDropdown">
+                            <a  class="dropdown-item" routerLink="/destination" routerLinkActive="active">Destination</a>
+                            <a  class="dropdown-item" routerLink="/package" routerLinkActive="active">Tour Packages</a>
+                            <a class="dropdown-item" routerLink="/guides" routerLinkActive="active">Travel Guides</a>
+                            <a class="dropdown-item" routerLink="/contacts" routerLinkActive="active">Contact</a>
+                            <a class="dropdown-item" routerLink="/registeration" routerLinkActive="active">Registeration</a>
+                        
+                            <!-- <a class="nav-item nav-link" *ngIf="ps.isUserLoggedIn()" href="/src/app/components/ticketbooking/ticketbooking.component.html">TicketBook</a> -->
+                            <!-- <a  class="nav-item nav-link" *ngIf="ps.isUserLoggedIn()" ><i class="fas fa-sign-out-alt" style="font-size:30px"></i></a> -->
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="container"  style="background-image: url(assets/img/users\,jpg.jpg)">
+    <div class="container">
+
+        <div class="height d-flex justify-content-center align-items-center">
+      
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+           User details
+          </button>
+      
+          
+        </div>
+        
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" role="dialog" tabindex="-1" >
+        <div class="modal-dialog model-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header float-right">
+              <h5>User details</h5>
+              <div class="text-right">
+                <i data-bs-dismiss="modal" aria-label="Close" class="fa fa-close"></i>
+              </div>
+            </div>
+            <div class="modal-body">
+                
+      
+      
+              <div class="table-responsive table-lg mt-3">
+                
+                <table class="table table-bordered">
+                    <thead>
+                        <tr >
+                          <th class="align-top">
+                            <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0">
+                              <input type="checkbox" class="custom-control-input" id="all-items">
+                              <label class="custom-control-label" for="all-items"></label>
+                            </div>
+                          </th>
+                          <th class="text-center align-middle">Destination</th>
+                          <th class="max-width text-center align-middle">CheckIn</th>
+                          <th class="text-center align-middle">CheckIn </th>
+                          <th class="text-center align-middle">Rooms</th>
+                          <th class="text-center align-middle">Adults</th>
+                          <th class="text-center align-middle">Children</th>
+                        </tr>
+                      </thead>
+        <tbody>
+           <tbody>
+                    <tr *ngFor="let t of ticket">
+                      <td class="align-middle">
+                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
+                          <input type="checkbox" class="custom-control-input" id="item-1">
+                          <label class="custom-control-label" for="item-1"></label>
+                        </div>
+                      </td>
+                            <td class="text-center align-middle">{{t.destination}}</td>
+                              <td class="text-center align-middle">{{t.checkin}}<span></span></td>
+                              <td class="text-center align-middle">{{t.checkout}}</td>
+                              <td class="text-center align-middle">{{t.rooms}} </td>
+                              <td class="text-center align-middle">{{t.adults}} </td>
+                              <td class="text-center align-middle">{{t.children}} </td>
+                    </tr>
+                  </tbody> 
+      </table>
+      
+              </div>
+      
+      
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    

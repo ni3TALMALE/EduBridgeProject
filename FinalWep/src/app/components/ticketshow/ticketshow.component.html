@@ -1,0 +1,416 @@
+<div class="container-fluid position-relative nav-bar p-0">
+    <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+        <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+            <a  class="navbar-brand">
+                <h1 class="m-0 text-primary"><span class="text-dark">EXPLO</span>RE WORLD</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0">
+                    <a class="nav-item nav-link" href="/user">Home</a>
+                    <!-- <a class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#updateTicket" >Update Ticket</a> -->
+                    <a  class="nav-item nav-link" routerLink="/login" routerLinkActive="active"><i class="fas fa-sign-out-alt" style="font-size:30px"></i></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+  </div>
+  
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container"  style="background-image: url(assets/img/users\,jpg.jpg)">
+  <div class="row flex-lg-nowrap">
+    <div class="col-12 col-lg-auto mb-3" style="width: 200px;">
+      <div class="card p-3">
+        <div class="e-navlist e-navlist--active-bg">
+          <ul class="nav">
+            <!-- <li class="nav-item"><a class="nav-link px-2 active" href="#"><i class="fas fa-fw fa-bar-chart mr-1"></i><span>Overview</span></a></li>
+            <li class="nav-item"><a class="nav-link px-2" href="" target="__blank"><i class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
+            <li class="nav-item"><a class="nav-link px-2" href="" target="__blank"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col">
+      <div class="e-tabs mb-3 px-3">
+        <ul class="nav nav-tabs">
+          <li class="nav-item"><a class="nav-link active">Tickets</a></li>
+        </ul>
+      </div>
+  
+      <div class="row flex-lg-nowrap" >
+        <div class="col mb-3">
+          <div class="e-panel card">
+            <div class="card-body" style="background-color: rgb(248, 241, 205);">
+              <div class="card-title">
+                <h6 class="mr-2"><span>Tickets</span><small class="px-1">Be a wise leader</small></h6>
+              </div>
+              <div class="e-table">
+                <div class="table-responsive table-lg mt-3">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr >
+                      <th class="text-center align-middle">ID</th>
+                      <th class="text-center align-middle">Destination</th>
+                      <th class="max-width text-center align-middle">CheckIn</th>
+                      <th class="text-center align-middle">Checkout </th>
+                      <th class="text-center align-middle">Rooms</th>
+                      <th class="text-center align-middle">Adults</th>
+                      <th class="text-center align-middle">Children</th>
+                      <th class="text-center align-middle">User ID</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let t of ticket">
+                              <td class="text-center align-middle">{{t.id}}</td>
+                              <td class="text-center align-middle">{{t.destination}}</td>
+                              <td class="text-center align-middle">{{t.checkin}}<span></span></td>
+                              <td class="text-center align-middle">{{t.checkout}}</td>
+                              <td class="text-center align-middle">{{t.rooms}} </td>
+                              <td class="text-center align-middle">{{t.adults}} </td>
+                              <td class="text-center align-middle">{{t.children}} </td>
+                              <td class="text-center align-middle">{{t.userid}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="text-center px-xl-3">
+                <button class="btn btn-success btn-block" type="button" data-bs-toggle="modal" data-bs-target="#ticketnew-form-modal">New Ticket</button>
+                <button class="btn btn-outline-warning btn-block" type="button" data-bs-toggle="modal" data-bs-target="#updateTicket">Edit Ticket</button>
+                <button class="btn btn-danger btn-block" type="button" data-bs-toggle="modal" data-bs-target="#deleteticket-form-modal"><i class="fa fa-trash"></i></button>
+               
+              </div>
+              <hr class="my-3">
+              <div class="e-navlist e-navlist--active-bold">
+                <ul class="nav">
+                  <!-- <li class="nav-item active"><a href="" class="nav-link"><span>All</span>&nbsp;<small>/&nbsp;32</small></a></li>
+                  <li class="nav-item"><a href="" class="nav-link"><span>Active</span>&nbsp;<small>/&nbsp;16</small></a></li>
+                  <li class="nav-item"><a href="" class="nav-link"><span>Selected</span>&nbsp;<small>/&nbsp;0</small></a></li> -->
+                </ul>
+              </div>
+              <!-- <hr class="my-3">
+              <div>
+                <div class="form-group">
+                  <label>Date from - to:</label>
+                  <div>
+                    <input id="dates-range" class="form-control flatpickr-input" placeholder="15 Sep 22  - 25 Jan 23" type="text" readonly="readonly">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Search by Name:</label>
+                  <div><input class="form-control w-100" type="text" placeholder="Name" value=""></div>
+                </div>
+              </div>
+              <hr class="my-3">
+              <div class="">
+                <label>Status:</label>
+                <div class="px-2">
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="user-status" id="users-status-disabled">
+                    <label class="custom-control-label" for="users-status-disabled">Disabled</label>
+                  </div>
+                </div>
+                <div class="px-2">
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="user-status" id="users-status-active">
+                    <label class="custom-control-label" for="users-status-active">Active</label>
+                  </div>
+                </div>
+                <div class="px-2">
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" name="user-status" id="users-status-any" checked="">
+                    <label class="custom-control-label" for="users-status-any">Any</label>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+    <!-- User Form Modal -->
+    <div class="modal fade" role="dialog" tabindex="-1" id="ticketnew-form-modal">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create User</h5>
+            <button type="button" class="close" data-bs-dismiss="modal">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="py-1">
+              <form class="form" novalidate=""  #insert="ngForm" (ngSubmit)="insertticketData(insert)">
+                <div class="row">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Your Destination</span>
+                          <select class="form-control custom-select" name="destination" ngModel="destination">
+                              <option >India</option>
+                                        <option >Paris</option>
+                                        <option >Italy</option>
+                                        <option >Croatia</option>
+                                        <option v>New York City</option>
+                              </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Depart Date</span>
+                            <input class="form-control" type="date"  name="checkin" ngModel="checkin" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Arrival Date</span>
+                          <input class="form-control" type="date"  name="checkout" ngModel="checkout" required>
+                        </div>
+                      </div>
+                    </div> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6 mb-3">
+                    <div class="mb-2"><b>Personal</b></div>
+                    <div class="row">
+                      <div class="col">
+                       
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Rooms</span>
+                          <select class="form-control custom-select"  name="rooms" ngModel="rooms">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <span class="form-label">Adults</span>
+                          <select class="form-control custom-select"  name="adults" ngModel="adults">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          </select>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <span class="form-label">Children</span>
+                        <select class="form-control custom-select"  name="children" ngModel="children">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        </select>
+                            </div>
+                          </div>
+                        </div>
+                  
+                </div>
+                <div class="row">
+                  <div class="col d-flex justify-content-end">
+                    <button class="btn btn-primary btn-btn-center" type="submit" (click)="successNotification()">Save Changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+</div>
+
+
+<!-- delete Form Modal -->
+<div class="modal fade" role="dialog" tabindex="-1" id="deleteticket-form-modal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cancel Ticket</h5>
+        <button type="button" class="close" data-bs-dismiss="modal">
+          <span aria-hidden="true">× </span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="py-1">
+          <form class="form" novalidate=""  #delete="ngForm" (ngSubmit)="deleteTicketData(delete)">
+            <div class="row">
+              <div class="col">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Enter Your Specific ID</label>
+                      <input class="form-control" type="text" name="id" placeholder="ID" value="id"  ngModel="id">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                <div class="mb-2"><b>Keeping in Touch</b></div>
+                <div class="row">
+                  <div class="col">
+                    <label>Email Notifications</label>
+                    <div class="custom-controls-stacked px-2">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="notifications-blog" checked="">
+                        <label class="custom-control-label" for="notifications-blog">Blog posts</label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="notifications-news" checked="">
+                        <label class="custom-control-label" for="notifications-news">Newsletter</label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="notifications-offers" checked="">
+                        <label class="custom-control-label" for="notifications-offers">Personal Offers</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col d-flex justify-content-end">
+                <button class="btn btn-danger" (click)="alertConfirmation()">Save Changes</button>
+              </div>
+            </div>
+            
+           </form>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Update Form Modal -->
+  <div class="modal fade" role="dialog" tabindex="-1" id="updateTicket">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create User</h5>
+            <button type="button" class="close" data-bs-dismiss="modal">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="py-1">
+              <form class="form" novalidate=""   #update="ngForm" (ngSubmit)="updateTicketData(update)">
+                <div class="row">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label>Specific ID</label>
+                          <input class="form-control" type="text"  id="name" name="id" placeholder="ID" ngModel="id" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Your Destination</span>
+                          <select class="form-control custom-select" name="destination" ngModel="destination">
+                              <option value="1">India</option>
+                                        <option value="2">Paris</option>
+                                        <option value="3">Italy</option>
+                                        <option value="4">Croatia</option>
+                                        <option value="5">New York City</option>
+                              </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Check In</span>
+                            <input class="form-control" type="date"  name="checkin" ngModel="checkin" required>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Check out</span>
+                          <input class="form-control" type="date"  name="checkout" ngModel="checkout" required>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-6 mb-3">
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <span class="form-label">Rooms</span>
+                    <select class="form-control custom-select"  name="rooms" ngModel="rooms">
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    </select>
+                        </div>
+                      </div>
+                     </div>
+                      <div class="row">
+                        <div class="col">
+                          <div class="form-group">
+                          <span class="form-label">Adults</span>
+                          <select class="form-control custom-select"  name="adults" ngModel="adults">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          </select>
+                          </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                              <span class="form-label">Children</span>
+                        <select class="form-control custom-select"  name="children" ngModel="children">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        </select>
+                            </div>
+                          </div>
+                         </div>
+                </div>
+                <div class="row">
+                  <div class="col d-flex justify-content-end">
+                    <button class="btn btn-success" type="submit" (click)="updateNotification()">Save Changes</button>
+                  </div>
+                </div>
+              <!-- </form>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+   
+  
+  

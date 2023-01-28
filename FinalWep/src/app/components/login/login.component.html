@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<section class="sign-in" style="background-image: url(assets/img/users\,jpg.jpg)">
+   
+    <div class="container">
+    <div class="signin-content">
+    <div class="signin-image">
+    <figure><img src="assets/img/loginpage2.jpg" alt="sing up image"></figure>
+    <a href="/registeration" class="signup-image-link">Create an account</a>
+    </div>
+    <div class="signin-form">
+    <h2 class="form-title">Sign In</h2>
+    
+    <form  class="register-form"  #data="ngForm"  id="login-form" [formGroup]="loginForm" (ngSubmit)="login(data)">
+       
+            
+        <div class="form-group">
+    <label for="id"><i class="fas fa-user-circle  material-icons-name " style="font-size:25px"></i></label>
+    <input type="text" id="id" placeholder="Your Specific ID"  required   formControlName="id" />
+    <span *ngIf="id && id.touched && id.invalid" style="color: red; ">Invalid ID</span>
+   
+    </div>
+   
+    <div class="form-group">
+    <input type="password"  id="password" placeholder="Password"   required  formControlName="password"  />
+    <label for="password"><i class="fas fa-lock fa-lg"></i></label>
+    <span *ngIf="password && password.touched && password.invalid" style="color: red; ">Invalid username</span>
+   
+    </div>
+   
+
+    <div class="form-group">
+    <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+    <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+    </div>
+    <div class="form-group form-button">
+    <input type="submit"  (click)="submit()" name="login" id="login" class="form-submit" value="Log in" />
+    
+    </div>
+    <div class="form-button btn-group btn-group-sm">
+        <a type="button" href="/updatepassword" class="btn btn-outline-warning" value="Forgot Password!!" >Forgot Password!!</a>
+        <!-- <a type="button" href="/deleteuser" class="btn btn-outline-danger" value="Delete Account??" >Delete Account??</a> -->
+    </div>
+   
+</form>
+   
+    <div class="social-login">
+    <span class="social-label">Or login with</span>
+    <ul class="socials">
+    <li><a href="#"><i class="display-flex-center fab fa-twitter"></i></a></li>
+    <li><a href="#"><i class="display-flex-center fab fa-facebook"></i></a></li>
+    <li><a href="#"><i class="display-flex-center fab fa-google"></i></a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+   
